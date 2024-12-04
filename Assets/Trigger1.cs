@@ -6,8 +6,13 @@ using UnityEngine.Playables;
 public class Trigger1 : MonoBehaviour
 {
     public PlayableDirector timeline;
+    private bool played = false;
     public void OnTriggerEnter(Collider other)
     {
-        timeline.Play();
+        if (played == false)
+        {
+            timeline.Play();
+            played = true;
+        }
     }
 }
